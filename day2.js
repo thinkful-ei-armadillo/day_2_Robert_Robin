@@ -100,3 +100,15 @@ haz3('Atlantis');
 */
 
 //for each, filter, and map (drill 4)
+const turtleMovement = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+// filter steps in upward and left movement
+const turtleUpdateMovement = turtleMovement.filter(index => index[0] >= 0 && index[1] >= 0);
+console.log(turtleUpdateMovement);
+// map total steps in Each array
+const totalTurtleSteps = turtleUpdateMovement.map ((el) => el[0]+el[1]);
+console.log(totalTurtleSteps);
+//log with forEach for each case
+const totalStepEachCase = totalTurtleSteps.forEach(el => 
+  console.log(`The turtle took ${el} steps`)
+);
+totalStepEachCase;
