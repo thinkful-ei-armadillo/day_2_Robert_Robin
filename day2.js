@@ -73,7 +73,30 @@ const filteredNames = filter(myNames, function(name) {
   return name[0] === 'R';
 });
 
-console.log(filteredNames) // => ['Rich', 'Ray']
+//console.log(filteredNames) // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
 
-console.log(filter( ['Rich', 'Joe', 'Bhaumik', 'Ray'], name => name[0] === 'R'));
+//bonus for invoking function on one line
+//console.log(filter( ['Rich', 'Joe', 'Bhaumik', 'Ray'], name => name[0] === 'R'));
+
+//function as return values (drill 3)
+function hazardWarningCreator(typeOfWarning) {
+  let warningCounter = 0;
+  return function(location) {
+    warningCounter ++;
+    console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+    console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time${warningCounter !== 1 ? 's' : ''} today!`);
+  }
+}
+
+const haz1 = hazardWarningCreator('Rocks on the road');
+const haz2 = hazardWarningCreator('Ice on the road');
+const haz3 = hazardWarningCreator('Oil on the road');
+/*
+haz1('Main St and Pacific Ave');
+haz1('Centinela Ave and Olympic Blvd');
+haz2('Timbuck Two');
+haz3('Atlantis');
+*/
+
+//for each, filter, and map (drill 4)
