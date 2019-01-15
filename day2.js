@@ -115,8 +115,10 @@ const totalSteps = turtleMovement
 //reduce drill (drill 5)
 
 const encodedMessage = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
-const messageArray = encodedMessage.split(' ');
+// split to array
+const messageArray = encodedMessage.split(' ')
+// reduce function 
+                    .reduce((accumulator, currentValue) =>
+                     currentValue.length === 3 ? accumulator + ' ' : accumulator + currentValue[currentValue.length - 1].toUpperCase(), "");
 
-const reducer = (accumulator, currentValue) => currentValue.length === 3 ? accumulator + ' ' : accumulator + currentValue[currentValue.length - 1].toUpperCase();
-
-console.log(messageArray.reduce(reducer, ''));
+console.log(messageArray);
