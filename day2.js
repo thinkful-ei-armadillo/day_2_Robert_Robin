@@ -75,3 +75,5 @@ const filteredNames = filter(myNames, function(name) {
 
 console.log(filteredNames) // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
+
+console.log(filter( ['Rich', 'Joe', 'Bhaumik', 'Ray'], name => name[0] === 'R'));
