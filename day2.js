@@ -1,3 +1,5 @@
+'use strict'
+
 function min(num){
     let i = 0;
     let min = num[0];
@@ -21,3 +23,15 @@ function max(num){
     }
     return max;
 }
+
+const average = (array) => {
+    let sum=0;
+    array.forEach( (num) => sum += num);
+    return sum/array.length;
+};
+
+const arr = [3, 6, 7, 3];
+
+console.log(average(arr));
+
+console.log('hello');
