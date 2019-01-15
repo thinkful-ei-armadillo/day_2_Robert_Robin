@@ -1,37 +1,51 @@
-'use strict'
+'use strict';
+// Min - Max drills
 
 function min(num){
-    let i = 0;
-    let min = num[0];
-    while(i != num.length){
-        if(min > num[i]){
-            min = num[i];
-        }
-        i++;
+  let i = 0;
+  let min = num[0];
+  while(i !== num.length){
+    if(min > num[i]){
+      min = num[i];
     }
-    return min;
+    i++;
+  }
+  return min;
 }
 
 function max(num){
-    let i = 0;
-    let max = num[0];
-    while(i != num.length){
-        if(max < num[i]){
-            max = num[i];
-        }
-        i++;
+  let i = 0;
+  let max = num[0];
+  while(i !== num.length){
+    if(max < num[i]){
+      max = num[i];
     }
-    return max;
+    i++;
+  }
+  return max;
 }
 
+//Average drills
+
 const average = (array) => {
-    let sum=0;
-    array.forEach( (num) => sum += num);
-    return sum/array.length;
+  let sum=0;
+  array.forEach( (num) => sum += num);
+  return sum/array.length;
 };
 
-const arr = [3, 6, 7, 3];
+//Higher Order drill (1)
 
-console.log(average(arr));
+function repeat(num, fn) {
+  for (let i=0; i<num; i++) {
+    fn();
+  }
+}
 
-console.log('hello');
+function hello() {
+  console.log('Hello world');
+}
+
+function goodbye() {
+  console.log('goodbye world');
+}
+
