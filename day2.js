@@ -101,14 +101,22 @@ haz3('Atlantis');
 
 //for each, filter, and map (drill 4)
 const turtleMovement = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+const totalSteps = turtleMovement
 // filter steps in upward and left movement
-const turtleUpdateMovement = turtleMovement.filter(index => index[0] >= 0 && index[1] >= 0);
-console.log(turtleUpdateMovement);
+  .filter(index => index[0] >= 0 && index[1] >= 0)
 // map total steps in Each array
-const totalTurtleSteps = turtleUpdateMovement.map ((el) => el[0]+el[1]);
-console.log(totalTurtleSteps);
+  .map ((el) => el[0]+el[1])
 //log with forEach for each case
-const totalStepEachCase = totalTurtleSteps.forEach(el => 
-  console.log(`The turtle took ${el} steps`)
-);
-totalStepEachCase;
+  .forEach(el => console.log(`The turtle took ${el} steps`));
+
+// totalSteps;
+
+//reduce drill (drill 5)
+
+const encodedMessage = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+const messageArray = encodedMessage.split(' ');
+
+const reducer = (accumulator, currentValue) => currentValue.length === 3 ? accumulator + ' ' : accumulator + currentValue[currentValue.length - 1].toUpperCase();
+
+console.log(messageArray.reduce(reducer, ''));
